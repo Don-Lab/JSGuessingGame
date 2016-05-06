@@ -1,0 +1,31 @@
+<DOCTYPE! html>
+<head>
+	<title>Guessing Game</title>
+</head>
+<body>
+<center><h1>Guessing Game</h1></center>
+<br />
+<p>Results:</p>
+<p id="result"></p>
+<button onclick="guess()">Play the Game</button>
+
+<script>
+function guess () {
+	for (i = 3; i > 0; i--) {
+		var g = prompt("Guess a number between 1-10", "Guess");
+		var num = Math.floor(Math.random() * 11);
+		if (g == num) {
+			document.getElementById("result").innerHTML = "Correct!";
+			break;
+		}
+		else if (g > num) {
+			document.getElementById("result").innerHTML = "Too High!";
+		}
+		else {
+			document.getElementById("result").innerHTML = "Too Low!";
+		}
+	}
+}
+</script>
+</body>
+</html>
