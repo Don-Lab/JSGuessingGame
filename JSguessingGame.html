@@ -12,7 +12,7 @@
 <script>
 function guess () {
 	for (i = 3; i > 0; i--) {
-		var g = prompt("Guess a number between 1-10", "Guess");
+		var g = prompt("Guess a number between 1-10 \nTries: " + i + " Left", "Guess");
 		var num = Math.floor(Math.random() * 11);
 		if (g == num) {
 			document.getElementById("result").innerHTML = "Correct!";
