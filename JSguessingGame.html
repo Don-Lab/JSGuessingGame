@@ -11,9 +11,12 @@
 
 <script>
 function guess () {
+	var num = Math.floor(Math.random() * 11);  //random number rounded down
+	if (num == 0) {
+		var num = num + 1;                 //if the number is 0, then make it 1
+	}
 	for (i = 3; i > 0; i--) {  //3 tries
 		var g = prompt("Guess a number between 1-10 \nTries: " + i + " Left", "Guess");   //give the user a prompt
-		var num = Math.floor(Math.random() * 11);
 		if (g == num) {
 			document.getElementById("result").innerHTML = "Correct!";		//if correct, display correct
 			document.getElementById("number2").innerHTML = "Tries left: " + i;	//and dislpay tries left
@@ -22,13 +25,16 @@ function guess () {
 		else if (g > num) {
 			document.getElementById("result").innerHTML = "Too High!";   //if guess is higher, display too high
 		}
-		else {
+		else if (g < num) {
 			document.getElementById("result").innerHTML = "Too Low!";  //if guess is lower, display too low
 		}
 	}
 	if (guess != num) {
 		document.getElementById("number1").innerHTML = "Correct answer is " + num;   //if the final guess is wrong, show answer
 		document.getElementById("number2").innerHTML = "Try Again!";  //and show try again
+	}
+	else if (g == num) {
+		document.getElementById("result").innerHTML = "Great job!";	//if guess is correct, show great job
 	}
 }
 </script>
