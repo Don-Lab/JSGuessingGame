@@ -1,4 +1,4 @@
 # Guessing Game (Javascript)
-A simple game made with JavaScript that has the user guess a number. This works best with Chrome
+A simple game made with JavaScript that has the user guess a number.
 
-###Version 1.5.3
+###Version 2
