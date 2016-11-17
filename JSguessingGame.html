@@ -6,7 +6,8 @@
 <center><h1>Guessing Game</h1></center>
 <br />
 <p>Results:</p>
-<p id="result"></p>
+<p id="number1"></p>
+<p id="number2"></p>
 <button onclick="guess()">Play the Game</button>
 
 <script>
@@ -18,23 +19,22 @@ function guess () {
 	for (i = 3; i > 0; i--) {  //3 tries
 		var g = prompt("Guess a number between 1-10 \nTries: " + i + " Left", "Guess");   //give the user a prompt
 		if (g == num) {
-			document.getElementById("result").innerHTML = "Correct!";		//if correct, display correct
-			document.getElementById("number2").innerHTML = "Tries left: " + i;	//and dislpay tries left
+			alert("Correct!");		//if correct, display correct
 			break;
 		}
 		else if (g > num) {
-			document.getElementById("result").innerHTML = "Too High!";   //if guess is higher, display too high
+			alert("Too High!");   //if guess is higher, display too high
 		}
 		else if (g < num) {
-			document.getElementById("result").innerHTML = "Too Low!";  //if guess is lower, display too low
+			alert("Too Low!");  //if guess is lower, display too low
 		}
 	}
-	if (guess != num) {
+	if (g != num) {
 		document.getElementById("number1").innerHTML = "Correct answer is " + num;   //if the final guess is wrong, show answer
 		document.getElementById("number2").innerHTML = "Try Again!";  //and show try again
 	}
 	else if (g == num) {
-		document.getElementById("result").innerHTML = "Great job!";	//if guess is correct, show great job
+		document.getElementById("number1").innerHTML = "Great job!";	//if guess is correct, show great job
 	}
 }
 </script>
